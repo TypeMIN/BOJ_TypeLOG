@@ -1,10 +1,11 @@
 N, M = map(int, input().split())
-
+# -ing
 # 포켓몬 이름을 저장할 리스트
 poketmons = []
 
 for _ in range(N):
-    poketmons.append(input())
+    poketmon = input()
+    poketmons.append(poketmon)
     
 for _ in range(M):
     question = input()
