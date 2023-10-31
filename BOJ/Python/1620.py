@@ -1,5 +1,5 @@
 N, M = map(int, input().split())
-# -ing?
+# -ing?>
 # 포켓몬 이름을 저장할 리스트
 poketmons = []
 
