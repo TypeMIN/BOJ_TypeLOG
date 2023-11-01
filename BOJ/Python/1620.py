@@ -1,18 +1,23 @@
-N, M = map(int, input().split())
-# -ing?>
-# 포켓몬 이름을 저장할 리스트
-poketmons = []
+import sys
+input = sys.stdin.readline
 
-for _ in range(N):
-    poketmon = input()
-    poketmons.append(poketmon)
+N, M = map(int, input().split())
+
+# 포켓몬을 저장할 딕셔너리
+poketmons = dict()
+
+for i in range(N):
+    poketmon = input().rstrip()
+    # {번호 : 이름}, {이름 : 번호} 형태로 저장
+    poketmons[i + 1] = poketmon
+    poketmons[poketmon] = i + 1
     
 for _ in range(M):
-    question = input()
+    question = input().rstrip()
     # 입력받은 문자열이 숫자로만 이루어져있으면
     if question.isdigit():
-        # 인덱스로 접근하여 출력
-        print(poketmons[int(question) - 1])
+        # 번호를 통해 포켓몬의 이름을 출력
+        print(poketmons[int(question)])
     else:
-        # 리스트의 인덱스를 반환하여 출력
-        print(poketmons.index(question)+1)
+        # 이름을 통해 포켓몬의 번호를 출력
+        print(poketmons[question])
