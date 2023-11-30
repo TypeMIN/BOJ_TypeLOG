@@ -26,4 +26,4 @@ for i in range(N):
             print(stack[stack_size - 1])
         else:
             print(-1)
-# time outed
+# time outedc
